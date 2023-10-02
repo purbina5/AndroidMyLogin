@@ -34,25 +34,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-                    <!-- Imagen 1 -->
+                    <!-- Imagen -->
                     <ImageView
                         android:id="@+id/imageView1"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/digimon"
-                    android:contentDescription="@string/app_name" />
+                        android:contentDescription="@string/app_name" />
 
-                    <!-- Nombre de la Imagen 1 -->
+                    <!-- Nombre de la Imagen -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
                         android:text="Nombre de la Imagen 1"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -68,29 +68,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-                    <!-- Imagen 2 -->
+                    <!-- Imagen -->
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/digimon2"
-                    android:contentDescription="@string/app_name" />
+                        android:src="@drawable/digimonn"
+                        android:contentDescription="@string/app_name" />
 
-                    <!-- Nombre de la Imagen 2 -->
+                    <!-- Nombre de la Imagen -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
-                        android:text="Nombre de la Imagen 2"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                        android:text="Nombre de la Imagen 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <!-- CardView 3 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,9 +103,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-                    <!-- Imagen 2 -->
+                    <!-- Imagen -->
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="48dp"
@@ -112,18 +114,19 @@
                         android:src="@drawable/digimon3"
                         android:contentDescription="@string/app_name" />
 
-                    <!-- Nombre de la Imagen 2 -->
+                    <!-- Nombre de la Imagen -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
-                        android:text="Nombre de la Imagen 2"
+                        android:text="Nombre de la Imagen 1"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <!-- CardView 4 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,9 +138,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-                    <!-- Imagen 2 -->
+                    <!-- Imagen -->
                     <ImageView
                         android:id="@+id/imageView4"
                         android:layout_width="48dp"
@@ -145,18 +149,19 @@
                         android:src="@drawable/digimon4"
                         android:contentDescription="@string/app_name" />
 
-                    <!-- Nombre de la Imagen 2 -->
+                    <!-- Nombre de la Imagen -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
-                        android:text="Nombre de la Imagen 2"
+                        android:text="Nombre de la Imagen 1"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <!-- CardView 5 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -168,9 +173,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-                    <!-- Imagen 2 -->
+                    <!-- Imagen -->
                     <ImageView
                         android:id="@+id/imageView5"
                         android:layout_width="48dp"
@@ -178,13 +184,117 @@
                         android:src="@drawable/digimon5"
                         android:contentDescription="@string/app_name" />
 
-                    <!-- Nombre de la Imagen 2 -->
+                    <!-- Nombre de la Imagen -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="16dp"
-                        android:text="Nombre de la Imagen 2"
+                        android:text="Nombre de la Imagen 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 6 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Imagen -->
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/digimon6"
+                        android:contentDescription="@string/app_name" />
+
+                    <!-- Nombre de la Imagen -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Nombre de la Imagen 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 7 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Imagen -->
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/digimon7"
+                        android:contentDescription="@string/app_name" />
+
+                    <!-- Nombre de la Imagen -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Nombre de la Imagen 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView 8 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Imagen -->
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/digimon8"
+                        android:contentDescription="@string/app_name" />
+
+                    <!-- Nombre de la Imagen -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Nombre de la Imagen 1"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
