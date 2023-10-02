@@ -13,10 +13,10 @@
         android:theme="@style/Theme.MyLogin"
         tools:targetApi="31">
         <activity
-            android:name=".spinner"
+            android:name=".inicio"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".splashview"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".spinner"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

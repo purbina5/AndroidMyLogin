@@ -5,4 +5,10 @@
         <item>Volver al login</item>
         <item>Ayuda</item>
     </string-array>
+
+    <string-array name="spinner_optionss">
+        <item>Contact</item>
+        <item>salir</item>
+        <item>Ayuda</item>
+    </string-array>
 </resources>

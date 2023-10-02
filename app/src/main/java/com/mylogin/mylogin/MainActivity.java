@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // No se requiere ninguna acción si no se selecciona nada.
+
             }
         });
     }
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 //startActivity(contactoIntent);
                 break;
             case "Volver al login":
-                finish(); // Cierra la actividad actual para volver al inicio de sesión.
+                finish();
 
                 break;
             case "Ayuda":
@@ -60,7 +60,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void irASpinnerDesdeMain(View view) {
-        Intent intent = new Intent(this,spinner.class); // Reemplaza "Activity_spinner" con el nombre correcto de tu actividad de spinner
+        Intent intent = new Intent(this,spinner.class);
+        startActivity(intent);
+    }
+    public void iraInicioDesdeMain(View view) {
+        Intent intent = new Intent(this,inicio.class);
         startActivity(intent);
     }
 }
