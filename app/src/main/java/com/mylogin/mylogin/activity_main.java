@@ -36,13 +36,13 @@ public class activity_main extends AppCompatActivity implements ActivityCompat.O
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     private FusedLocationProviderClient fusedLocationClient;
-
+    private  MapView mapView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mapa);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        MapView mapView= findViewById(R.id.mapView);
+        mapView= findViewById(R.id.mapView);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setBuiltInZoomControls(true);
         mapView.setMultiTouchControls(true);
@@ -78,7 +78,12 @@ public class activity_main extends AppCompatActivity implements ActivityCompat.O
                         if (location != null) {
                             double latitude = location.getLatitude();
                             double longitude = location.getLongitude();
-                            // Use latitude and longitude as needed
+                            GeoPoint santiagoPoint = new GeoPoint(latitude,longitude);
+                            Marker santiagoMarker = new Marker(mapView);
+                            santiagoMarker.setPosition(santiagoPoint);
+                            santiagoMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                            santiagoMarker.setTitle("Santiago, Chile");
+                            santiagoMarker.setSnippet("Capital de Chile");
                         }
                     }
                 });
