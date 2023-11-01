@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyLogin</string>
+    <string name="app_name">MyLogin</string>    
     <string-array name="spinner_options">
         <item>Contact</item>
         <item>Volver al login</item>
@@ -11,4 +11,5 @@
         <item>salir</item>
         <item>Ayuda</item>
     </string-array>
+
 </resources>
