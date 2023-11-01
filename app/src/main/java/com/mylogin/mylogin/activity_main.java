@@ -1,16 +1,15 @@
 package com.mylogin.mylogin;
 
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -18,37 +17,14 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
-
 import android.Manifest;
 import android.view.View;
 import android.widget.TextView;
-
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import android.preference.PreferenceManager;
-import android.widget.TextView;
-import org.osmdroid.api.IMapController;
-import org.osmdroid.config.Configuration;
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
-import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.Polyline;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
-import android.Manifest;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
+
 
 
 public class activity_main extends AppCompatActivity {
@@ -82,60 +58,51 @@ public class activity_main extends AppCompatActivity {
 
         mapView = findViewById(R.id.mapView);
         Marker pos = new Marker(mapView);
-        // Configura el mapa
+
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setBuiltInZoomControls(true);
         mapView.setMultiTouchControls(true);
 
-        // Verifica si la capa de ubicación ya se ha agregado
 
-        ;
-
-
-        //Coordenadas de Santiago, Chile
         double santiagoLatitude = -33.44915;
         double santiagoLongitude = -70.66242;
 
-        //Coordenadas de Valparaíso, Chile
-        double valparaisoLatitude = -33.4989778;
-        double valparaisoLongitude = -70.6180072;
-        //Crear objetos GeoPoint para los marcadores
+
+        double micasaLatitude = -33.538048;
+        double micasaLongitude = -70.7526656;
+
         GeoPoint santiagoPoint = new GeoPoint(santiagoLatitude, santiagoLongitude);
-        GeoPoint valparaisoPoint = new GeoPoint(valparaisoLatitude, valparaisoLongitude);
-        //Crear marcadores con títulos y descripciones
+        GeoPoint valparaisoPoint = new GeoPoint(micasaLatitude, micasaLongitude);
+
         Marker santiagoMarker = new Marker(mapView);
         santiagoMarker.setPosition(santiagoPoint);
         santiagoMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         santiagoMarker.setTitle("Santiago, Chile");
-        santiagoMarker.setSnippet("Capital de Chile");
+        santiagoMarker.setSnippet("Santiago de Chile");
 
-        //Agregar marcadores al mapa
+
         mapView.getOverlays().add(santiagoMarker);
-        // Verificar y solicitar permisos si es necesario
+
         if (checkLocationPermission()) {
             requestLocation();
         }
 
 
-        //Crear y agregar la línea entre Santiago y Valparaíso
-
-
         mapView.getOverlayManager().add(polyline);
-        //Calcular la distancia entre Santiago y Valparaíso
+
         double distance = CalcularDistancia.CalcularDistancia(santiagoPoint, valparaisoPoint);
         TextView distanceTextView = findViewById(R.id.distanceTextView);
-        distanceTextView.setText("Distancia entre Santiago y Valparaíso: " +
-                String.format("%.2f", distance) + " km");
-        // Centrar el mapa en Santiago, Chile
+        distanceTextView.setText("Distancia entre mi casa y la Universidad: " + String.format("%.2f", distance) + " km");
+
         mapController = mapView.getController();
         mapController.setCenter(santiagoPoint);
         mapController.setZoom(14);
-        // Puedes ajustar el nivel de zoom según sea necesario
+
     }
 
     private boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // Si no se tienen permisos, solicitarlos en tiempo de ejecución
+
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
             return false;
         }
@@ -147,7 +114,7 @@ public class activity_main extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                requestLocation(); // Si se otorgan los permisos, obtener la ubicación
+                requestLocation();
             }
         }
     }
@@ -174,8 +141,8 @@ public class activity_main extends AppCompatActivity {
                             MiMarker = new Marker(mapView);
                             MiMarker.setPosition(MiPoint);
                             MiMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-                            MiMarker.setTitle("Mi Ubicacion");
-                            MiMarker.setSnippet("estas aquí");
+                            MiMarker.setTitle("Mi Ubicación");
+                            MiMarker.setSnippet("Usted esta aqui");
                             mapView.getOverlays().add(MiMarker);
                             mapController.setCenter(MiPoint);
                             mapController.setZoom(18);
@@ -185,16 +152,20 @@ public class activity_main extends AppCompatActivity {
 
                             GeoPoint santiagoPoint1 = new GeoPoint(santiagoLatitude, santiagoLongitude);
                             double distance = CalcularDistancia.CalcularDistancia(santiagoPoint1,MiPoint);
-                            distanceTextView.setText("Distancia entre Santiago y Tu Ubicacion: " +
-                                    String.format("%.2f", distance) + " km");
+                            distanceTextView.setText("Distancia entre su casa y la universidad " + String.format("%.2f", distance) + " km");
                             polyline.addPoint(santiagoPoint1);
                             polyline.addPoint(MiPoint);
-                            polyline.setColor(0xFF0000FF); // Color de la línea (azul en formato ARGB)
+                            polyline.setColor(0xFF0000FF);
                             polyline.setWidth(5);
-                            // Haz lo que quieras con las coordenadas aquí
+
                         }
                     }
                 });
+
+    }
+    public void VolverAinicio(View view) {
+        Intent intent = new Intent(this,inicio.class);
+        startActivity(intent);
     }
 }
 
