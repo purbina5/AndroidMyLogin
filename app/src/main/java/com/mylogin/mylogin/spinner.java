@@ -1,5 +1,6 @@
 package com.mylogin.mylogin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,51 +14,53 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class spinner extends AppCompatActivity {
 
-    private EditText editTextCorreo;
-    private EditText editTextContrasena;
-    private EditText editTextConfirmarContrasena;
-    private DatePicker datePickerFechaNacimiento;
-    private Button btnRegistro;
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+    private Button registerButton;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
 
+        mAuth = FirebaseAuth.getInstance();
 
-        editTextCorreo = findViewById(R.id.editTextCorreo);
-        editTextContrasena = findViewById(R.id.editTextContrasena);
-        editTextConfirmarContrasena = findViewById(R.id.editTextConfirmarContrasena);
-        datePickerFechaNacimiento = findViewById(R.id.datePickerFechaNacimiento);
-        btnRegistro = findViewById(R.id.btnRegistro);
+        usernameEditText = findViewById(R.id.editTextCorreo);
+        passwordEditText = findViewById(R.id.editTextContrasena);
+        registerButton = findViewById(R.id.btnRegistro);
 
-
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarUsuario();
+
+                String email = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(spinner.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(spinner.this, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(spinner.this, "Error en el registro", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
     }
 
-    private void registrarUsuario() {
-
-        String correo = editTextCorreo.getText().toString();
-        String contrasena = editTextContrasena.getText().toString();
-        String confirmarContrasena = editTextConfirmarContrasena.getText().toString();
-
-
-
-        if (contrasena.equals(confirmarContrasena)) {
-
-            Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
-        } else {
-
-            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-        }
-    }
     private void handleSpinnerSelection(String selectedItem) {
         switch (selectedItem) {
             case "Contact":
