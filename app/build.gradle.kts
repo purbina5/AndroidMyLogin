@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mylogin.mylogin"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.mylogin.mylogin"
@@ -36,6 +36,11 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.gms:play-services-location:21.0.1")
+   // implementation("com.android.support:support-v4:28.0.0")
+    //implementation("com.android.support:localbroadcastmanager:28.0.0")
+    implementation ("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+    implementation ("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
+
 
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-analytics")
