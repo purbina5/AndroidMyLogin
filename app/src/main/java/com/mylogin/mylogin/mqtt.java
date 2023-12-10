@@ -3,7 +3,6 @@ package com.mylogin.mylogin;
 import androidx.appcompat.app.AppCompatActivity;
 import static android.graphics.Color.GREEN;
 import static android.graphics.Color.RED;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -20,12 +19,11 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttSecurityException;
-import org.w3c.dom.Text;
 
-public class Mqtt extends AppCompatActivity {
-    private String clienteId = "";
+public class mqtt extends AppCompatActivity {
+    private String clienteId = "mqtt://paceuy:3NNLLBi12V5UZvjL@paceuy.cloud.shiftr.io:1883";
     //mqtt://paceuy:3NNLLBi12V5UZvjL@paceuy.cloud.shiftr.io
-    private static String mqttHost = "tcp://paceuy.cloud.shiftr.io";
+    private static String mqttHost = "tcp://paceuy.cloud.shiftr.io:1883";
     private static String mqttUser = "paceuy";
     private static String mqttPass = "3NNLLBi12V5UZvjL";
     private MqttAndroidClient cliente;
@@ -85,12 +83,12 @@ public class Mqtt extends AppCompatActivity {
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    Toast.makeText(Mqtt.this, "Conectado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mqtt.this, "Conectado", Toast.LENGTH_SHORT).show();
                     suscribirseTopic();
                 }
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    Toast.makeText(Mqtt.this, "Falló conexión", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mqtt.this, "Falló conexión", Toast.LENGTH_SHORT).show();
                 }
             });
         }

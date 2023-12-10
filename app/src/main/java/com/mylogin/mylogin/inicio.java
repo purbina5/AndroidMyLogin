@@ -28,7 +28,7 @@ public class inicio extends AppCompatActivity {
         btnAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(inicio.this, Mqtt.class);
+                Intent intent = new Intent(inicio.this, mqtt.class);
                 startActivity(intent);
             }
         });
