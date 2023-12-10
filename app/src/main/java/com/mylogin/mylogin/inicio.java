@@ -1,7 +1,6 @@
 package com.mylogin.mylogin;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,17 +12,26 @@ public class inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        Button btn = (Button) findViewById(R.id.mapButton);
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        // Botón para ir a activity_main
+        Button btnMap = findViewById(R.id.mapButton);
+        btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(inicio.this,activity_main.class);
+                Intent intent = new Intent(inicio.this, activity_main.class);
+                startActivity(intent);
+            }
+        });
+
+        // Botón para ir a Mqtt
+        Button btnAyuda = findViewById(R.id.Ayuda);
+        btnAyuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(inicio.this, Mqtt.class);
                 startActivity(intent);
             }
         });
     }
-    //public void irAmapadesdeInicio(View view) {
-      //  Intent intent = new Intent(this,activity_main.class);
-        //startActivity(intent);
-    //}
 }
+

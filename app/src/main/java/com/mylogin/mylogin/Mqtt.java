@@ -37,7 +37,7 @@ public class Mqtt extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mqtt);
         Button btnOn = findViewById(R.id.btnOn);
         btnOn.setOnClickListener(new View.OnClickListener() {
             @Override
