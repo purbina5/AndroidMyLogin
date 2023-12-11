@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "504480916598",
-    "project_id": "mylogin21",
-    "storage_bucket": "mylogin21.appspot.com"
+    "project_number": "183582796405",
+    "project_id": "myloginnn-d4975",
+    "storage_bucket": "myloginnn-d4975.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:504480916598:android:88381ef871ff6f53096b57",
+        "mobilesdk_app_id": "1:183582796405:android:4b478686b79781acd7263c",
         "android_client_info": {
-          "package_name": "com.mylogin.mylogin"
+          "package_name": "com.paceuy.paceuy"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB-brJW_fZ1mOu004BAQ7dN3Lh9iw8U048"
+          "current_key": "AIzaSyCMFB1JzJUrAMyiKAgrjPsPgmnOgi9nX6A"
         }
       ],
       "services": {
